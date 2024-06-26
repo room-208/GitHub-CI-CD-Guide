@@ -20,10 +20,4 @@ jobs:
             IF_VAR: ${{github.actor == 'room-208' && 'Room' || 'Not Room'}}
         steps:
             - run: echo "${IF_VAR}"
-    
-    print-obj-filter:
-        runs-on: ubuntu-latest
-        env:
-            OBJ_VAR: ${{github.event.*.url}}
-        steps:
-            - run: echo "${OBJ_VAR}"
+
