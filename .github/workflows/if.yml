@@ -1,0 +1,10 @@
+name: If
+
+on: push
+
+jobs:
+    or:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello"
+              if: ${{contains(github.run_id, '1')}}
