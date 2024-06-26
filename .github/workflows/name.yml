@@ -1,0 +1,11 @@
+name: Naming
+
+on: push
+
+jobs:
+    print:
+        name: Super Man !
+        runs-on: ubuntu-latest
+        steps:
+            - name: Amazing Man !
+              run: echo "Hello"
