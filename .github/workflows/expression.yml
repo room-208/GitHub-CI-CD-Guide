@@ -1,0 +1,15 @@
+name: Expression
+
+on: push
+
+jobs:
+    ptint-literal:
+        runs-on: ubuntu-latest
+        steps:
+            - run: printenv | grep 'LITERAL_'
+              env:
+                LITERAL_NULL: ${{null}}
+                LITERAL_BOOLEAN: ${{true}}
+                LITERAL_NUMBER: ${{123}}
+                LITERAL_STRING: ${{'Hello'}}
+                LITERAL_OMIT_STRING: World
