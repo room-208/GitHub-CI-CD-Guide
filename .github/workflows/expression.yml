@@ -13,3 +13,10 @@ jobs:
                 LITERAL_NUMBER: ${{123}}
                 LITERAL_STRING: ${{'Hello'}}
                 LITERAL_OMIT_STRING: World
+    
+    print-if:
+        runs-on: ubuntu-latest
+        env:
+            IF_VAR: ${{github.actor == 'room-208' && 'Room' || 'Not Room'}}
+        steps:
+            - run: echo "${IF_VAR}"
