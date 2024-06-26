@@ -24,6 +24,6 @@ jobs:
     print-obj-filter:
         runs-on: ubuntu-latest
         env:
-            OBJ_VAR: ${{github.event.*.html_url}}
+            OBJ_VAR: ${{github.event.*.url}}
         steps:
             - run: echo "${OBJ_VAR}"
