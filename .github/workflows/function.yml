@@ -11,3 +11,12 @@ jobs:
                 CONTAINS_FUNC: ${{contains('Hello', 'ell')}}
                 START_FUNC: ${{startsWith('Hello', 'He')}}
                 END_FUNC: ${{endsWith('Hello', 'lo')}}
+    
+    generate:
+        runs-on: ubuntu-latest
+        steps:
+            - run: printenv | grep '_FUNC'
+              env:
+                FORMAT_FUNC: ${{format('{0}, {1}', 'AAA', 'BBB')}}
+                JOIN_FUNC: ${{join(github.event.*.html_url, ', ')}}
+    
