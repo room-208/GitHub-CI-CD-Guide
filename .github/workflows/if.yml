@@ -16,3 +16,9 @@ jobs:
             - run: echo "Hello"
               if: ${{failure()}}
     
+    skip:
+        if: ${{github.actor == 'room-208'}}
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello"
+    
