@@ -1,0 +1,18 @@
+name: Test
+
+on:
+  pull_request:
+    paths: ["chapter4/src", "chapter4/tests"]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v
+          - uses: actions/setup-python@v4
+            with:
+              python-version: '3.9'
+          - run: pip install -e .
+            working-directory: "chapter4"
+          - run: pytest chapter4/tests -v
+            working-directory: "chapter4"
