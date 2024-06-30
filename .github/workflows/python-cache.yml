@@ -11,14 +11,15 @@ jobs:
               with:
                 python-version: '3.9'
             - uses: actions/cache@v4
+              id: python-cache
               with:
                 key: ${{hashFiles('chapter5/requirements.txt')}}
                 path: ./venv
-            - run: |
-                if [[ -f ${GITHUB_WORKSPACE}/venv ]]; then echo "Cache exists"; fi
+            - run:
                 python -m venv venv
                 source venv/bin/activate
                 pip install -r chapter5/requirements.txt
+              if: steps.python-cache.outputs.cache-hit != 'true'
             - run: |
                 source venv/bin/activate
                 pip list
