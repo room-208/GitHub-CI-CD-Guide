@@ -19,4 +19,6 @@ jobs:
                 python -m venv venv
                 source venv/bin/activate
                 pip install -r chapter5/requirements.txt
-            - run: pip list
+            - run: |
+                source venv/bin/activate
+                pip list
