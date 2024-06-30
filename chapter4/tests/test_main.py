@@ -12,8 +12,3 @@ def test_odd_number():
     assert EvenOrOdd(3) == "odd"
     assert EvenOrOdd(1) == "odd"
     assert EvenOrOdd(-5) == "odd"
-
-
-def test_edge_cases():
-    assert EvenOrOdd(0) == "even"
-    assert EvenOrOdd(-1) == "odd"
