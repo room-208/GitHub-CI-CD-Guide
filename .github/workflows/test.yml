@@ -12,5 +12,5 @@ jobs:
               python-version: '3.9'
           - run: pip install -e .
             working-directory: "chapter4"
-          - run: pytest chapter4/tests -v
+          - run: pytest ./tests -v
             working-directory: "chapter4"
