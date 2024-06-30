@@ -10,7 +10,8 @@ jobs:
           - uses: actions/setup-python@v4
             with:
               python-version: '3.9'
-              cache: pip
+              # cache: pip
+              # [**/requirements.txt or **/pyproject.toml], make sure you have checked out the target repository
           - run: pip install -e .
             working-directory: "chapter4"
           - run: pytest ./tests -v
