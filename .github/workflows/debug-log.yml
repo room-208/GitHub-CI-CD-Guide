@@ -23,3 +23,11 @@ jobs:
                 echo "::group::Show environment variables"
                 printenv
                 echo "::endgroup::"
+    
+    log-secret:
+        runs-on: ubuntu-latest
+        env:
+            PASSWORD: SuperSecretValue
+        steps:
+            - run: echo "::add-mask::${PASSWORD}"
+            - run: echo "${PASSWORD}"
