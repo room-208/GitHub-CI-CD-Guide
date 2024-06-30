@@ -1,0 +1,11 @@
+name: Job Summaries
+
+on: push
+
+jobs:
+    log:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "## Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+            - run: echo "- hello" >> "${GITHUB_STEP_SUMMARY}"
+            - run: echo "- world" >> "${GITHUB_STEP_SUMMARY}"
