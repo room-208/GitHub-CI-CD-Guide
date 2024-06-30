@@ -1,9 +1,6 @@
 name: Test
 
-on:
-  # pull_request:
-  push:
-    paths: ["chapter4/src", "chapter4/tests"]
+on: push
 
 jobs:
     test:
