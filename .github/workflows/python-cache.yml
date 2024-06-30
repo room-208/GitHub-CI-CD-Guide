@@ -1,0 +1,22 @@
+name: Python Cache
+
+on: push
+
+jobs:
+    python-cache:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v4
+              with:
+                python-version: '3.9'
+            - uses: actions/cache@v4
+              with:
+                key: ${{hashFiles('chapter5/requirements.txt')}}
+                path: ./venv
+            - run: |
+                if [[ -f ${GITHUB_WORKSPACE}/venv ]]; then exit 0; fi
+                python -m venv venv
+                source venv/bin/activate
+                pip install -r requirements.txt
+            - run: pip list
