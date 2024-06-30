@@ -15,7 +15,7 @@ jobs:
                 key: ${{hashFiles('chapter5/requirements.txt')}}
                 path: ./venv
             - run: |
-                if [[ -f ${GITHUB_WORKSPACE}/venv ]]; then exit 0; fi
+                if [[ -f ${GITHUB_WORKSPACE}/venv ]]; then echo "Cache exists"; fi
                 python -m venv venv
                 source venv/bin/activate
                 pip install -r chapter5/requirements.txt
